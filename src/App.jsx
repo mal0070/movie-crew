@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 import HeroSection from "./components/home/HeroSection";
 import FeaturesSection from "./components/home/FeaturesSection";
@@ -8,7 +8,8 @@ import Footer from "./components/Footer";
 import LoginModal from "./components/LoginModal";
 import SignupModal from "./components/SignupModal";
 import FloatingButton from "./components/FloatingButton";
-import ChatRoomPage from "./pages/ChatRoomPage";
+import NetworkingPage from "./pages/NetworkingPage";
+import OpeningPage from "./pages/OpeningPage";
 import NotFoundPage from './pages/NotFoundPage';
 //import "./App.css";
 
@@ -21,21 +22,24 @@ const MainPage = () => (
 );
 
 const App = () => {
+  const [isSignUpOpen, setIsSignUpOpen] = useState(false);
+
   useEffect(() => {
     // 기존 애니메이션 및 모달 핸들링 생략 가능
   }, []);
 
   return (
     <Router>
-      <Header />
+      <Header onSignUpClick={() => setIsSignUpOpen(true)} />
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/chatroom" element={<ChatRoomPage />} />
+        <Route path="/opening" element={<OpeningPage />} />
+        <Route path="/networking" element={<NetworkingPage />} />
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
       <FloatingButton />
       <LoginModal />
-      <SignupModal />
+      <SignupModal isModalOpen={isSignUpOpen} setIsModalOpen={setIsSignUpOpen} />
       <Footer />
     </Router>
   );

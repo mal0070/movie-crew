@@ -1,4 +1,10 @@
+import React, { useState } from "react";
+import WriteModal from "./WriteModal";
+import { Link } from "react-router-dom";
+
 const HeroSection = () => {
+  const [isPostModalOpen, setIsPostModalOpen] = useState(false);
+
   return (
     <section
       id="home"
@@ -13,18 +19,20 @@ const HeroSection = () => {
         </p>
         <div className="flex flex-wrap gap-4 justify-center">
           <button
-            onClick={() => document.getElementById("signupModal").style.display = "block"}
+            onClick={() => setIsPostModalOpen(true)}
             className="px-6 py-3 text-white rounded-full bg-gradient-to-r from-orange-500 to-yellow-400 hover:shadow-xl text-lg"
           >
             크루 찾기 시작하기
           </button>
-          <a
-            href="#jobs"
+          <Link
+            to="/opening"
             className="px-6 py-3 border-2 border-orange-500 text-orange-500 rounded-full hover:bg-orange-500 hover:text-white text-lg"
           >
             구인정보 둘러보기
-          </a>
+          </Link>
         </div>
+        {/* 공고 작성 모달 (PostModal) - 추후 구현 */}
+        <WriteModal open={isPostModalOpen} onClose={() => setIsPostModalOpen(false)} />
       </div>
     </section>
   );
