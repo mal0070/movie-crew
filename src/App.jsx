@@ -11,6 +11,7 @@ import FloatingButton from "./components/FloatingButton";
 import NetworkingPage from "./pages/NetworkingPage";
 import OpeningPage from "./pages/OpeningPage";
 import NotFoundPage from './pages/NotFoundPage';
+import MyPage from "./pages/MyPage";
 //import "./App.css";
 
 const MainPage = () => (
@@ -35,6 +36,7 @@ const App = () => {
         <Route path="/" element={<MainPage />} />
         <Route path="/opening" element={<OpeningPage />} />
         <Route path="/networking" element={<NetworkingPage />} />
+        <Route path="/mypage" element={<MyPage />} />
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
       <FloatingButton />

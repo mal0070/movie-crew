@@ -19,31 +19,37 @@ const instagramAccounts = [
   {
     icon: '🎬',
     name: 'gw_indiefilm',
-    desc: "강원독립영화협회 인스타. 강원도 영화인들의 정보교류 및 독립영화 활성화",
+    desc: '강원독립영화협회 인스타. 강원도 영화인들의 정보교류 및 독립영화 활성화',
     link: 'https://www.instagram.com/gw_indiefilm/',
   },
   {
     icon: '🎬',
     name: 'cine.montage',
-    desc: "광주 독립예술영화 모임 <몽타주(Montage)>. 매주 수요일 저녁 광주에 모여 영화를 봅니다. 참여를 원하면 DM!",
+    desc: '광주 독립예술영화 모임 <몽타주(Montage)>. 매주 수요일 저녁 광주에 모여 영화를 봅니다. 참여를 원하면 DM!',
     link: 'https://www.instagram.com/cine.montage',
+  },
+  {
+    icon: '🎬',
+    name: 'indie_crew',
+    desc: '인천영상위원회. 인천 영화인들을 위한 네트워킹, 워크샵 등 제공',
+    link: 'https://www.instagram.com/incheon_film/',
   },
 ];
 
-{/* const cafeAccounts = [
+const cafeAccounts = [
   {
     icon: '☕',
-    name: '네이버 영화인 카페',
-    desc: '영화 제작, 오디션, 구인구직 등 다양한 정보가 활발히 공유되는 네이버 대표 영화인 카페.',
-    link: 'https://cafe.naver.com/moviemaker',
+    name: '서울필름아카데미(SFA)',
+    desc: '가장 빠르게 자체 교육과정 모집 소식을 볼 수 있는 곳. 장비 대여도 가능!',
+    link: 'https://cafe.naver.com/cmnixsfa',
   },
-  {
+ {
     icon: '☕',
     name: '다음 영화인 커뮤니티',
     desc: '다양한 영화인 네트워킹, 제작 정보, 자유게시판 등 영화인들의 소통 공간.',
     link: 'https://cafe.daum.net/filmpeople',
   },
-]; */}
+];
 
 const positionBasedRooms = [
   {
@@ -98,10 +104,9 @@ const positionBasedRooms = [
     icon: '👀',
     name: '광주영화영상인 채팅방',
     desc: '광주영화영상인연대 공식 채팅방 (비밀번호: gjcinema)',
-    link: 'https://open.kakao.com/o/gE3jIDVb'
-  }
+    link: 'https://open.kakao.com/o/gE3jIDVb',
+  },
 ];
-
 
 const NetworkingPage = () => {
   return (
@@ -109,7 +114,7 @@ const NetworkingPage = () => {
       <div className="container mx-auto px-4 pt-28">
         <NoticeSection />
         <InstagramSection accounts={instagramAccounts} />
-       {/* <CafeSection accounts={cafeAccounts} /> */}
+        <CafeSection accounts={cafeAccounts} />
         <ChatSection title="🗣️ 오픈채팅방" rooms={positionBasedRooms} />
       </div>
     </main>

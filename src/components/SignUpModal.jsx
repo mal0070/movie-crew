@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { RecaptchaVerifier, signInWithPhoneNumber, updateProfile, createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase.js";
+import { auth } from "../firebase/firebase.js";
 
 const SignupModal = ({ isModalOpen, setIsModalOpen }) => {
   const [email, setEmail] = useState("");
