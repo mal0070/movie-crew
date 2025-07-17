@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getUserScraps, addScrap, removeScrap } from "../../firebase/firebase.js";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 const SHEET_URL = "https://opensheet.elk.sh/1eJxXs00MiIEGZ8204wOUzdnCqURFT3oiMaFaUKfkksE/Sheet2";
 
@@ -8,6 +9,7 @@ const WorkshopListSection = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [userScraps, setUserScraps] = useState([]);
+  const [user, setUser] = useState(null);
   const [paymentFilter, setPaymentFilter] = useState("전체선택");
   const [regionFilter, setRegionFilter] = useState("전체선택");
 
@@ -16,6 +18,13 @@ const WorkshopListSection = () => {
     "전체선택", "서울", "부산", "대구", "인천", "광주", "대전", "울산", "세종", 
     "경기", "강원", "충북", "충남", "전북", "전남", "경북", "경남", "제주", "해외", "온라인"
   ];
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(getAuth(), (u) => {
+      setUser(u);
+    });
+    return unsubscribe;
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -41,6 +50,10 @@ const WorkshopListSection = () => {
   }, []);
 
   const handleScrapToggle = async (workshop) => {
+    if (!user) {
+      alert("로그인 이후 이용가능합니다");
+      return;
+    }
     try {
       const scrapData = {
         type: 'workshop',
