@@ -25,9 +25,9 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h3 className="text-orange-500 mb-4 font-semibold">서비스</h3>
+            <h3 className="text-orange-500 mb-4 font-semibold">팀</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-orange-500">서비스소개</a></li>
+              <li><a href="#" className="hover:text-orange-500">팀 소개</a></li>
               <li><a href="#" className="hover:text-orange-500">개인정보처리방침</a></li>
               <li><a href="#" className="hover:text-orange-500">이용약관</a></li>
             </ul>
