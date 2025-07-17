@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const jobs = [
   {
     title: "단편영화 '기억의 조각들' 촬영 스태프 모집",
@@ -55,12 +57,12 @@ const PopularJobs = () => {
           ))}
         </div>
         <div className="text-center mt-10">
-          <a
-            href="#"
+          <Link
+            to="/opening"
             className="inline-block px-6 py-3 bg-gradient-to-r from-orange-500 to-yellow-400 text-white rounded-full hover:shadow-xl"
           >
             더 많은 구인정보 보기
-          </a>
+          </Link>
         </div>
       </div>
     </section>

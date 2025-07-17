@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { auth } from "../firebase/firebase";
 import { onAuthStateChanged, signOut, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
 const Header = () => {
   const [user, setUser] = useState(null);
+  const location = useLocation();
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, setUser);
@@ -22,22 +23,75 @@ const Header = () => {
     }
   };
 
+  // 현재 페이지 확인 함수
+  const isActive = (path) => {
+    return location.pathname === path;
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-md py-4">
       <nav className="container mx-auto px-4 flex justify-between items-center">
         <a href="/" className="text-2xl font-bold text-orange-500">🎬 Moive Crew </a>
         <ul className="hidden md:flex gap-8 text-white">
-          <li><Link to='/opening' className="hover:text-orange-500">구인 공고</Link></li>
-          <li><Link to="/networking" className="hover:text-orange-500">영화인 네트워킹</Link></li>
-          <li><Link to='/workshop' className="hover:text-orange-500">워크숍</Link></li>
-          <li><Link to='/filmfestival' className="hover:text-orange-500">영화제</Link></li>
+          <li>
+            <Link 
+              to='/opening' 
+              className={`hover:text-orange-500 transition-colors ${
+                isActive('/opening') 
+                  ? 'text-orange-500 font-semibold border-b-2 border-orange-500 pb-1' 
+                  : ''
+              }`}
+            >
+              구인 공고
+            </Link>
+          </li>
+          <li>
+            <Link 
+              to="/network" 
+              className={`hover:text-orange-500 transition-colors ${
+                isActive('/network') 
+                  ? 'text-orange-500 font-semibold border-b-2 border-orange-500 pb-1' 
+                  : ''
+              }`}
+            >
+              영화인 네트워크
+            </Link>
+          </li>
+          <li>
+            <Link 
+              to='/workshop' 
+              className={`hover:text-orange-500 transition-colors ${
+                isActive('/workshop') 
+                  ? 'text-orange-500 font-semibold border-b-2 border-orange-500 pb-1' 
+                  : ''
+              }`}
+            >
+              워크숍
+            </Link>
+          </li>
+          <li>
+            <Link 
+              to='/filmfestival' 
+              className={`hover:text-orange-500 transition-colors ${
+                isActive('/filmfestival') 
+                  ? 'text-orange-500 font-semibold border-b-2 border-orange-500 pb-1' 
+                  : ''
+              }`}
+            >
+              영화제
+            </Link>
+          </li>
         </ul>
         <div className="flex gap-4">
           {user ? (
             <>
               <Link
                 to="/mypage"
-                className="px-4 py-2 border-2 border-orange-500 text-orange-500 rounded-full hover:bg-orange-500 hover:text-white transition"
+                className={`px-4 py-2 border-2 border-orange-500 rounded-full hover:bg-orange-500 hover:text-white transition ${
+                  isActive('/mypage') 
+                    ? 'bg-orange-500 text-white' 
+                    : 'text-orange-500'
+                }`}
               >
                 마이페이지
               </Link>

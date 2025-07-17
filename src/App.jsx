@@ -8,11 +8,12 @@ import Footer from "./components/Footer";
 import LoginModal from "./components/LoginModal";
 import SignupModal from "./components/SignupModal";
 import FloatingButton from "./components/FloatingButton";
-import NetworkingPage from "./pages/NetworkingPage";
+import NetworkPage from "./pages/NetworkPage";
 import OpeningPage from "./pages/OpeningPage";
 import NotFoundPage from './pages/NotFoundPage';
 import MyPage from "./pages/MyPage";
 import WorkshopPage from "./pages/WorkshopPage";
+import ContactModal from "./pages/ContactPage";
 //import "./App.css";
 
 const MainPage = () => (
@@ -25,6 +26,7 @@ const MainPage = () => (
 
 const App = () => {
   const [isSignUpOpen, setIsSignUpOpen] = useState(false);
+  const [isContactOpen, setIsContactOpen] = useState(false);
 
   useEffect(() => {
     // 기존 애니메이션 및 모달 핸들링 생략 가능
@@ -36,12 +38,13 @@ const App = () => {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/opening" element={<OpeningPage />} />
-        <Route path="/networking" element={<NetworkingPage />} />
+        <Route path="/network" element={<NetworkPage />} />
         <Route path="/workshop" element={<WorkshopPage />} />
         <Route path="/mypage" element={<MyPage />} />
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
-      <FloatingButton />
+      <FloatingButton onContactClick={() => setIsContactOpen(true)} />
+      <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
       <LoginModal />
       <SignupModal isModalOpen={isSignUpOpen} setIsModalOpen={setIsSignUpOpen} />
       <Footer />

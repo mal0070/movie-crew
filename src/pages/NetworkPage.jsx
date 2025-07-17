@@ -1,7 +1,7 @@
-import NoticeSection from '../components/networking/NoticeSection';
-import ChatSection from '../components/networking/ChatSection';
-import CafeSection from '../components/networking/CafeSection';
-import InstagramSection from '../components/networking/InstagramSection';
+import NoticeSection from '../components/network/NoticeSection';
+import ChatSection from '../components/network/ChatSection';
+import CafeSection from '../components/network/CafeSection';
+import InstagramSection from '../components/network/InstagramSection';
 
 const instagramAccounts = [
   {
@@ -108,7 +108,7 @@ const positionBasedRooms = [
   },
 ];
 
-const NetworkingPage = () => {
+const NetworkPage = () => {
   return (
     <main className=" bg-gray-300 min-h-screen text-gray-900 pb-16">
       <div className="container mx-auto px-4 pt-28">
@@ -121,4 +121,4 @@ const NetworkingPage = () => {
   );
 };
 
-export default NetworkingPage;
+export default NetworkPage;
