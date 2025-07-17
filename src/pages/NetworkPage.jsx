@@ -45,9 +45,9 @@ const cafeAccounts = [
   },
  {
     icon: '☕',
-    name: '다음 영화인 커뮤니티',
-    desc: '다양한 영화인 네트워킹, 제작 정보, 자유게시판 등 영화인들의 소통 공간.',
-    link: 'https://cafe.daum.net/filmpeople',
+    name: "액터 길드(Actor's Guild)",
+    desc: '배우들을 위한 소통공간. 프로필 북 제작과 프로필 투어도 함께해요.',
+    link: 'https://cafe.naver.com/actorsguild',
   },
 ];
 
