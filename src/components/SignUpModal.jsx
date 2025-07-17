@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { RecaptchaVerifier, signInWithPhoneNumber, updateProfile, createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase/firebase.js";
 
-const SignupModal = ({ isModalOpen, setIsModalOpen }) => {
+const SignUpModal = ({ isModalOpen, setIsModalOpen }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirm, setPasswordConfirm] = useState("");
@@ -212,4 +212,4 @@ const SignupModal = ({ isModalOpen, setIsModalOpen }) => {
   );
 };
 
-export default SignupModal;
+export default SignUpModal;

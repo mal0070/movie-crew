@@ -29,7 +29,6 @@ const Footer = () => {
               <li><a href="#" className="hover:text-orange-500">회사소개</a></li>
               <li><a href="#" className="hover:text-orange-500">개인정보처리방침</a></li>
               <li><a href="#" className="hover:text-orange-500">이용약관</a></li>
-              <li><a href="#" className="hover:text-orange-500">채용정보</a></li>
             </ul>
           </div>
         </div>

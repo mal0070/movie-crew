@@ -6,7 +6,7 @@ import FeaturesSection from "./components/home/FeaturesSection";
 import PopularJobs from "./components/home/PopularJobs";
 import Footer from "./components/Footer";
 import LoginModal from "./components/LoginModal";
-import SignupModal from "./components/SignupModal";
+import SignUpModal from "./components/SignUpModal";
 import FloatingButton from "./components/FloatingButton";
 import NetworkPage from "./pages/NetworkPage";
 import OpeningPage from "./pages/OpeningPage";
@@ -46,7 +46,7 @@ const App = () => {
       <FloatingButton onContactClick={() => setIsContactOpen(true)} />
       <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
       <LoginModal />
-      <SignupModal isModalOpen={isSignUpOpen} setIsModalOpen={setIsSignUpOpen} />
+      <SignUpModal isModalOpen={isSignUpOpen} setIsModalOpen={setIsSignUpOpen} />
       <Footer />
     </Router>
   );
