@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -8,10 +9,10 @@ const Footer = () => {
           <div>
             <h3 className="text-orange-500 mb-4 font-semibold">서비스</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="/opening" className="hover:text-orange-500">구인 공고</a></li>
-              <li><a href="/network" className="hover:text-orange-500">영화인 네트워크</a></li>
-              <li><a href="/workshop" className="hover:text-orange-500">워크숍</a></li>
-              <li><a href="/filmfestival" className="hover:text-orange-500">영화제</a></li>
+              <li><Link to="/opening" className="hover:text-orange-500">구인 공고</Link></li>
+              <li><Link to="/network" className="hover:text-orange-500">영화인 네트워크</Link></li>
+              <li><Link to="/workshop" className="hover:text-orange-500">워크숍</Link></li>
+              <li><Link to="/filmfestival" className="hover:text-orange-500">영화제</Link></li>
             </ul>
           </div>
           <div>
