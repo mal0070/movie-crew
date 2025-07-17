@@ -118,7 +118,17 @@ const WorkshopListSection = () => {
     return true;
   });
 
-  if (loading) return <section className="bg-white rounded-2xl shadow-lg p-8 mb-8"><div className="text-center text-gray-400">로딩 중...</div></section>;
+  if (loading) return (
+    <section className="bg-white rounded-2xl shadow-lg p-8 mb-8">
+      <div className="flex flex-col items-center justify-center min-h-[120px]">
+        <svg className="animate-spin h-8 w-8 text-orange-500 mb-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
+          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"/>
+        </svg>
+        <div className="text-center text-gray-400">로딩 중...</div>
+      </div>
+    </section>
+  );
   if (error) return <section className="bg-white rounded-2xl shadow-lg p-8 mb-8"><div className="text-center text-red-500">{error}</div></section>;
 
   return (
@@ -163,58 +173,64 @@ const WorkshopListSection = () => {
       {filteredWorkshops.length === 0 ? (
         <div className="text-center text-gray-400">조건에 맞는 워크숍이 없습니다.</div>
       ) : (
-        <table className="min-w-full border border-gray-200 text-sm">
-          <thead>
-            <tr className="bg-gray-100">
-              <th className="px-3 py-2 border-b font-semibold">스크랩</th>
-              <th className="px-3 py-2 border-b font-semibold">기관</th>
-              <th className="px-3 py-2 border-b font-semibold">워크숍명</th>
-              <th className="px-3 py-2 border-b font-semibold">기간</th>
-              <th className="px-3 py-2 border-b font-semibold">비용</th>
-              <th className="px-3 py-2 border-b font-semibold">지역</th>
-              <th className="px-3 py-2 border-b font-semibold">일정</th>
-              <th className="px-3 py-2 border-b font-semibold">선발방식</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredWorkshops.map((workshop, idx) => (
-              <tr
-                key={idx}
-                className={`hover:bg-green-50 transition ${workshop.url ? 'cursor-pointer' : 'cursor-not-allowed'}`}
-                onClick={() => {
-                  if (workshop.url) {
-                    window.open(workshop.url, '_blank', 'noopener');
-                  }
-                }}
-                title={workshop.url ? '자세히 보기' : '링크 없음'}
-              >
-                <td className="px-3 py-2 border-b">
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleScrapToggle(workshop);
-                    }}
-                    className={`p-1 rounded transition ${
-                      isScrapped(workshop)
-                        ? 'text-yellow-500 hover:text-yellow-600'
-                        : 'text-gray-400 hover:text-yellow-500'
-                    }`}
-                    title={isScrapped(workshop) ? '스크랩 해제' : '스크랩 추가'}
-                  >
-                    {isScrapped(workshop) ? '★' : '☆'}
-                  </button>
-                </td>
-                <td className="px-3 py-2 border-b">{workshop.institution}</td>
-                <td className="px-3 py-2 border-b font-medium text-gray-900">{workshop.workshop_title}</td>
-                <td className="px-3 py-2 border-b">{workshop.duration}</td>
-                <td className="px-3 py-2 border-b">{workshop.payment}</td>
-                <td className="px-3 py-2 border-b">{workshop.region}</td>
-                <td className="px-3 py-2 border-b">{workshop.schedule}</td>
-                <td className="px-3 py-2 border-b">{workshop.selection}</td>
+        <div className="w-full overflow-x-scroll">
+          <table className="min-w-full border border-gray-200 text-sm">
+            <thead>
+              <tr className="bg-gray-100">
+                <th className="px-3 py-2 border-b font-semibold whitespace-nowrap">스크랩</th>
+                <th className="px-3 py-2 border-b font-semibold">기관</th>
+                <th className="px-3 py-2 border-b font-semibold">워크숍명</th>
+                <th className="px-3 py-2 border-b font-semibold">기간</th>
+                <th className="px-3 py-2 border-b font-semibold">비용</th>
+                <th className="px-3 py-2 border-b font-semibold">지역</th>
+                <th className="px-3 py-2 border-b font-semibold">일정</th>
+                <th className="px-3 py-2 border-b font-semibold">선발방식</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {filteredWorkshops.map((workshop, idx) => (
+                <tr
+                  key={idx}
+                  className={`hover:bg-green-50 transition ${workshop.url ? 'cursor-pointer' : 'cursor-not-allowed'}`}
+                  onClick={() => {
+                    if (workshop.url) {
+                      window.open(workshop.url, '_blank', 'noopener');
+                    }
+                  }}
+                  title={workshop.url ? '자세히 보기' : '링크 없음'}
+                >
+                  <td className="px-3 py-2 border-b">
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleScrapToggle(workshop);
+                      }}
+                      className={`p-1 rounded transition ${
+                        isScrapped(workshop)
+                          ? 'text-yellow-500 hover:text-yellow-600'
+                          : 'text-gray-400 hover:text-yellow-500'
+                      }`}
+                      title={isScrapped(workshop) ? '스크랩 해제' : '스크랩 추가'}
+                    >
+                      {isScrapped(workshop) ? '★' : '☆'}
+                    </button>
+                  </td>
+                  <td className="px-3 py-2 border-b">{workshop.institution}</td>
+                  <td className="px-3 py-2 border-b font-medium text-gray-900">{workshop.workshop_title}</td>
+                  <td className="px-3 py-2 border-b">{workshop.duration}</td>
+                  <td className="px-3 py-2 border-b whitespace-nowrap">{workshop.payment}</td>
+                  <td className="px-3 py-2 border-b whitespace-nowrap">{workshop.region}</td>
+                  <td className="px-3 py-2 border-b whitespace-pre-line">
+                  {workshop.schedule
+                    ? workshop.schedule.replace(/\s*\(/, '\n(')
+                    : ''}
+                </td>
+                  <td className="px-3 py-2 border-b whitespace-nowrap">{workshop.selection}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       )}
     </section>
   );
