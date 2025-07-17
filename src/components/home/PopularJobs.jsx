@@ -32,7 +32,7 @@ const PopularJobs = () => {
     <section id="jobs" className="py-24">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-orange-500 text-center mb-4">인기 구인정보</h2>
-        <p className="text-center text-gray-300 mb-12">지금 가장 많이 찾는 포지션들을 확인해보세요</p>
+        <p className="text-center text-gray-400 mb-12">지금 가장 많이 찾는 포지션들을 확인해보세요</p>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {jobs.map((job, idx) => (
             <div
@@ -47,7 +47,7 @@ const PopularJobs = () => {
                   </span>
                 ))}
               </div>
-              <p className="text-gray-300 text-sm mb-3">{job.desc}</p>
+              <p className="text-gray-400 text-sm mb-3">{job.desc}</p>
               <div className="flex justify-between text-xs text-gray-400">
                 {job.meta.map((m, i) => (
                   <span key={i}>{m}</span>

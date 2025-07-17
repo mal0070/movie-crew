@@ -12,10 +12,10 @@ const HeroSection = () => {
     >
       <div className="max-w-2xl px-4 animate-fadeInUp">
         <h1 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-400 mb-6">
-          독립영화의 새로운 시작
+        Movie Crew: 무비 크루
         </h1>
         <p className="text-lg text-gray-300 mb-8">
-          학생 작품부터 독립영화까지, 당신의 꿈을 함께 만들어갈 크루를 찾아보세요.
+        경험이 없어도, 인맥이 없어도, 당신의 꿈을 함께 만들어가요.
         </p>
         <div className="flex flex-wrap gap-4 justify-center">
           <button
@@ -26,7 +26,7 @@ const HeroSection = () => {
           </button>
           <Link
             to="/opening"
-            className="px-6 py-3 border-2 border-orange-500 text-orange-500 rounded-full hover:bg-orange-500 hover:text-white text-lg"
+            className="px-6 py-3 bg-white border-2 border-orange-500 text-orange-500 rounded-full hover:bg-orange-500 hover:text-white text-lg"
           >
             구인정보 둘러보기
           </Link>

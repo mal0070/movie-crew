@@ -38,7 +38,7 @@ const FeaturesSection = () => {
     <section id="about" className="py-24 bg-white/5">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold text-orange-500 mb-4">영화계 초보자를 위한 특별한 플랫폼</h2>
-        <p className="text-lg text-gray-300 mb-12">막 영화계에 발을 들이는 여러분을 위한 모든 정보를 한 곳에 모았습니다</p>
+        <p className="text-lg text-gray-400 mb-12">막 영화계에 발을 들이는 여러분을 위한 모든 정보를 한 곳에 모았습니다</p>
         <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((f, idx) => (
             <div
@@ -47,7 +47,7 @@ const FeaturesSection = () => {
             >
               <div className="text-4xl mb-4">{f.icon}</div>
               <h3 className="text-xl font-semibold mb-2 text-orange-400">{f.title}</h3>
-              <p className="text-gray-300 text-sm leading-relaxed">{f.desc}</p>
+              <p className="text-gray-400 text-sm leading-relaxed">{f.desc}</p>
             </div>
           ))}
         </div>
