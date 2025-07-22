@@ -27,11 +27,12 @@ const MainPage = () => (
 );
 
 // 페이지 이동 시마다 pageview 전송
-function usePageView() {
+function PageViewTracker() {
   const location = useLocation();
   React.useEffect(() => {
     ReactGA.send({ hitType: "pageview", page: location.pathname });
   }, [location]);
+  return null;
 }
 
 const App = () => {
@@ -42,10 +43,9 @@ const App = () => {
     // 기존 애니메이션 및 모달 핸들링 생략 가능
   }, []);
 
-  usePageView();
-
   return (
     <Router>
+      <PageViewTracker />
       <Header onSignUpClick={() => setIsSignUpOpen(true)} />
       <Routes>
         <Route path="/" element={<MainPage />} />
