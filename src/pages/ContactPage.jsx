@@ -152,7 +152,7 @@ const ContactModal = ({ isOpen, onClose }) => {
               href="mailto:mal0070@naver.com"
               className="text-orange-600 hover:text-orange-800 font-medium"
             >
-              mal0070@naver.com
+              mvcrew@naver.com
             </a>
           </div>
         </div>
