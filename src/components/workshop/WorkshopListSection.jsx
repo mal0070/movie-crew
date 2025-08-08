@@ -180,7 +180,7 @@ const WorkshopListSection = () => {
                 <th className="px-3 py-2 border-b font-semibold whitespace-nowrap">스크랩</th>
                 <th className="px-3 py-2 border-b font-semibold">기관</th>
                 <th className="px-3 py-2 border-b font-semibold">워크숍명</th>
-                <th className="px-3 py-2 border-b font-semibold">기간</th>
+                <th className="px-3 py-2 border-b font-semibold">접수기간</th>
                 <th className="px-3 py-2 border-b font-semibold">비용</th>
                 <th className="px-3 py-2 border-b font-semibold">지역</th>
                 <th className="px-3 py-2 border-b font-semibold">일정</th>

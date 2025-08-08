@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid gap-8 md:grid-cols-3 mb-8">
           <div>
-            <h3 className="text-orange-500 mb-4 font-semibold">서비스</h3>
+            <h3 className="text-orange-500 mb-4 font-semibold">Movie Crew</h3>
             <ul className="space-y-2 text-sm">
               <li><Link to="/opening" className="hover:text-orange-500">구인 공고</Link></li>
               <li><Link to="/network" className="hover:text-orange-500">영화인 네트워크</Link></li>
@@ -16,18 +16,9 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h3 className="text-orange-500 mb-4 font-semibold">지원</h3>
-            <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-orange-500">고객센터</a></li>
-              <li><a href="#" className="hover:text-orange-500">이용가이드</a></li>
-              <li><a href="#" className="hover:text-orange-500">FAQ</a></li>
-              <li><a href="#" className="hover:text-orange-500">신고하기</a></li>
-            </ul>
-          </div>
-          <div>
             <h3 className="text-orange-500 mb-4 font-semibold">팀</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-orange-500">팀 소개</a></li>
+              <li><a href="#" className="hover:text-orange-500">서비스 소개</a></li>
               <li><a href="#" className="hover:text-orange-500">개인정보처리방침</a></li>
               <li><a href="#" className="hover:text-orange-500">이용약관</a></li>
             </ul>
