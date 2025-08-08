@@ -199,7 +199,7 @@ const WorkshopListSection = () => {
                   }}
                   title={workshop.url ? '자세히 보기' : '링크 없음'}
                 >
-                  <td className="px-3 py-2 border-b">
+                  <td className="px-3 py-2 border-b text-center">
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
@@ -215,17 +215,17 @@ const WorkshopListSection = () => {
                       {isScrapped(workshop) ? '★' : '☆'}
                     </button>
                   </td>
-                  <td className="px-3 py-2 border-b">{workshop.institution}</td>
-                  <td className="px-3 py-2 border-b font-medium text-gray-900">{workshop.workshop_title}</td>
-                  <td className="px-3 py-2 border-b">{workshop.duration}</td>
-                  <td className="px-3 py-2 border-b whitespace-nowrap">{workshop.payment}</td>
-                  <td className="px-3 py-2 border-b whitespace-nowrap">{workshop.region}</td>
-                  <td className="px-3 py-2 border-b whitespace-pre-line">
+                  <td className="px-3 py-2 border-b text-center">{workshop.institution}</td>
+                  <td className="px-3 py-2 border-b font-medium text-gray-900 text-center">{workshop.workshop_title}</td>
+                  <td className="px-3 py-2 border-b text-center whitespace-pre-line">{workshop.duration}</td>
+                  <td className="px-3 py-2 border-b whitespace-nowrap text-center">{workshop.payment}</td>
+                  <td className="px-3 py-2 border-b whitespace-nowrap text-center">{workshop.region}</td>
+                  <td className="px-3 py-2 border-b whitespace-pre-line text-center">
                   {workshop.schedule
                     ? workshop.schedule.replace(/\s*\(/, '\n(')
                     : ''}
                 </td>
-                  <td className="px-3 py-2 border-b whitespace-nowrap">{workshop.selection}</td>
+                  <td className="px-3 py-2 border-b whitespace-nowrap text-center">{workshop.selection}</td>
                 </tr>
               ))}
             </tbody>
