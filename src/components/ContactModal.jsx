@@ -5,23 +5,25 @@ const ContactModal = ({ isOpen, onClose }) => {
     name: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
   });
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    const mailtoLink = `mailto:mal0070@naver.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+
+    const mailtoLink = `mailto:mal0070@naver.com?subject=${encodeURIComponent(
+      formData.subject
+    )}&body=${encodeURIComponent(
       `이름: ${formData.name}\n이메일: ${formData.email}\n\n문의내용:\n${formData.message}`
     )}`;
-    
+
     window.location.href = mailtoLink;
   };
 
@@ -30,7 +32,7 @@ const ContactModal = ({ isOpen, onClose }) => {
       name: '',
       email: '',
       subject: '',
-      message: ''
+      message: '',
     });
     onClose();
   };
@@ -40,11 +42,11 @@ const ContactModal = ({ isOpen, onClose }) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       {/* 배경 오버레이 */}
-      <div 
+      <div
         className="absolute inset-0 bg-black bg-opacity-50"
         onClick={handleClose}
       ></div>
-      
+
       {/* 모달 컨텐츠 */}
       <div className="relative bg-white rounded-2xl shadow-xl max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto">
         {/* 닫기 버튼 */}
@@ -54,16 +56,21 @@ const ContactModal = ({ isOpen, onClose }) => {
         >
           ×
         </button>
-        
+
         <div className="p-8">
-          <h1 className="text-3xl font-bold text-gray-800 mb-2 text-center">문의하기</h1>
+          <h1 className="text-3xl font-bold text-gray-800 mb-2 text-center">
+            문의하기
+          </h1>
           <p className="text-gray-600 text-center mb-8">
             궁금한 점이나 제안사항이 있으시면 언제든 연락주세요.
           </p>
-          
+
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-gray-700 mb-2"
+              >
                 이름 *
               </label>
               <input
@@ -77,9 +84,12 @@ const ContactModal = ({ isOpen, onClose }) => {
                 placeholder="이름을 입력해주세요"
               />
             </div>
-            
+
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700 mb-2"
+              >
                 이메일 *
               </label>
               <input
@@ -93,9 +103,12 @@ const ContactModal = ({ isOpen, onClose }) => {
                 placeholder="이메일을 입력해주세요"
               />
             </div>
-            
+
             <div>
-              <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+              <label
+                htmlFor="subject"
+                className="block text-sm font-medium text-gray-700 mb-2"
+              >
                 제목 *
               </label>
               <input
@@ -109,9 +122,12 @@ const ContactModal = ({ isOpen, onClose }) => {
                 placeholder="문의 제목을 입력해주세요"
               />
             </div>
-            
+
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+              <label
+                htmlFor="message"
+                className="block text-sm font-medium text-gray-700 mb-2"
+              >
                 문의내용 *
               </label>
               <textarea
@@ -125,7 +141,7 @@ const ContactModal = ({ isOpen, onClose }) => {
                 placeholder="문의하실 내용을 자세히 작성해주세요"
               />
             </div>
-            
+
             <div className="flex gap-4">
               <button
                 type="submit"
@@ -142,9 +158,11 @@ const ContactModal = ({ isOpen, onClose }) => {
               </button>
             </div>
           </form>
-          
+
           <div className="mt-8 p-4 bg-orange-50 border border-orange-200 rounded-lg">
-            <h3 className="font-semibold text-orange-800 mb-2">📧 직접 메일 보내기</h3>
+            <h3 className="font-semibold text-orange-800 mb-2">
+              📧 직접 문의 보내기
+            </h3>
             <p className="text-orange-700 text-sm mb-2">
               위 폼을 사용하시거나, 직접 메일을 보내실 수도 있습니다.
             </p>
@@ -154,6 +172,17 @@ const ContactModal = ({ isOpen, onClose }) => {
             >
               mvcrew@naver.com
             </a>
+            <p className="text-orange-700 text-sm mt-4 mb-2">
+              인스타그램 DM 문의도 가능합니다.
+            </p>
+            <a
+              href="https://www.instagram.com/moviecrew_official/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-gradient-to-r from-orange-500 to-yellow-500 text-white font-semibold py-2 px-4 rounded-lg hover:opacity-90 transition"
+            >
+              @moviecrew_official
+            </a>
           </div>
         </div>
       </div>
@@ -161,4 +190,4 @@ const ContactModal = ({ isOpen, onClose }) => {
   );
 };
 
-export default ContactModal; 
+export default ContactModal;

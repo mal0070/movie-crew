@@ -15,7 +15,7 @@ import OpeningPage from "./pages/OpeningPage";
 import NotFoundPage from './pages/NotFoundPage';
 import MyPage from "./pages/MyPage";
 import WorkshopPage from "./pages/WorkshopPage";
-import ContactModal from "./pages/ContactPage";
+import ContactModal from "./components/ContactModal";
 //import "./App.css";
 
 const MainPage = () => (

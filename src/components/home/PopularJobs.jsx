@@ -34,8 +34,9 @@ const PopularJobs = () => {
         <h2 className="text-3xl font-bold text-orange-500 text-center mb-4">인기 구인정보</h2>
         <p className="text-center text-gray-400 mb-12 whitespace-pre-line">
           지금 가장 많이 찾는 포지션들을 확인해보세요
-          {"\n"}
-          (* 현재 서비스는 베타테스트 단계로, 해당 공고는 예시입니다. 추후 조회 수가 높은 공고 순으로 표시될 예정입니다.)
+        </p>
+        <p className="text-center text-red-400 mb-12 whitespace-pre-line">
+          * 현재 서비스는 베타테스트 단계로, 해당 공고는 예시입니다. 추후 조회 수가 높은 공고 순으로 표시될 예정입니다.
         </p>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {jobs.map((job, idx) => (
