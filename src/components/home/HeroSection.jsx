@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import WriteModal from "./WriteModal";
 import { Link } from "react-router-dom";
+import bgImg from "../../assets/bg-image2.jpg";
 
 const HeroSection = () => {
   const [isPostModalOpen, setIsPostModalOpen] = useState(false);
@@ -8,7 +9,11 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative flex items-center justify-center h-screen text-center bg-[url('https://via.placeholder.com/1200x600')] bg-cover bg-center bg-no-repeat bg-blend-overlay bg-black/40"
+      style={{
+        backgroundImage: `url(${bgImg})`,
+      }}
+      className="relative flex items-center justify-center h-[70vh] text-center 
+                 bg-cover bg-center bg-no-repeat bg-blend-overlay bg-black/40"
     >
       <div className="max-w-2xl px-4 animate-fadeInUp">
         <h1 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-400 mb-6">
