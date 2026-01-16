@@ -15,7 +15,7 @@
 | **라이브러리**    | React + Vite                         |
 | **언어**          | Javascript                        |
 | **스타일링** | Tailwind CSS                            |
-| **API/스토어**    | Google Sheets API   |
+| **API**    | Google Sheets API   |
 | **인증**          | Firebase                          |
 | **배포**          | Vercel                            |
 
